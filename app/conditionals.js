@@ -2,7 +2,8 @@
 
 function largerNum(num1, num2) {
     // you code below
-
+    if (num1 > num2) { return num1; }
+    else return num2;
     // you code above
 }
 
@@ -16,6 +17,24 @@ function largerNum(num1, num2) {
 
 function testGrader(score, possible) {
     // you code below
+    let gradePercent = (score / possible) * 100;
+    var gradeLetter = 'F';
+    switch (true) {
+        case gradePercent >= 90:
+            gradeLetter = 'A';
+            break;
+        case gradePercent >= 80:
+            gradeLetter = 'B';
+            break;
+        case gradePercent >= 70:
+            gradeLetter = 'C';
+            break;
+        case gradePercent >= 60:
+            gradeLetter = 'D';
+            break;
+
+    }
+    return gradeLetter;
 
     // you code above
 }
@@ -34,12 +53,34 @@ function testGrader(score, possible) {
 function timeOfDayGreeting(hour) {
     // you code below
 
+    switch (true) {
+        case hour >= 5 && hour <= 11:
+            return 'good morning';
+            break;
+        case hour >= 12 && hour <= 17:
+            return 'good afternoon';
+            break;
+        case hour >= 18 && hour <= 21:
+            return 'good evening';
+            break;
+        default:
+            return 'good night';
+            break;
+    }
     // you code above
 }
 
 //4. Write a function that will take in a number and return 'fever' if it indicates a fever (over 98.6) and additionally if the person should go to the hospital (at or above 103) 'fever go to hospital' (hint: try this with string concatenation), if it is under return 'no fever'
 function fever(temp) {
-
+    var message = "no fever"
+    if (temp > 98.6) {
+        message = 'fever';
+    }
+    if (temp >= 103) {
+        message = message.concat(' go to hospital');
+        console.log(message)
+    }
+    return message;
 }
 
 //5. Write a function that takes in a car object, if it is not moving then return true
@@ -52,7 +93,7 @@ let myCar = {
 
 function isStopped(car) {
     // you code below
-
+    return !car.moving;
     // you code above
 }
 
@@ -65,7 +106,7 @@ let dish = {
 
 function washDish(dish) {
     // you code below
-
+    return (dish.yourDish && dish.isDirty)
     // you code above
 }
 
