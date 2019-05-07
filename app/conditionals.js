@@ -140,8 +140,16 @@ function flightCost(destination, firstClass) {
     //***hint: use the find method***
     // you code below
 
+    var x = 'standard';
+    var cost;
+    if (firstClass) { x = 'firstClass' }
 
-
+    for (var i = 0; i < flights.length; i++) {
+        if (flights[i].to == destination) {
+            cost = flights[i].x;
+        }
+    }
+    return cost;
 
     // you code above
 
