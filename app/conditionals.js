@@ -63,8 +63,8 @@ function timeOfDayGreeting(hour) {
         case hour >= 18 && hour <= 21:
             return 'good evening';
             break;
-        default:
-            return 'good night';
+        case hour < 5 || hour > 21:
+            return 'Good Night';
             break;
     }
     // you code above
@@ -139,6 +139,9 @@ let flights = [{
 function flightCost(destination, firstClass) {
     //***hint: use the find method***
     // you code below
+
+
+
 
     // you code above
 
